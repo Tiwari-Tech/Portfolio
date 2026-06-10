@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --accent: #2979FF;
+  --accent-light: #82B1FF;
+  --accent-glow: #82B1FF;
+  --bg: #050508;
+  --surface: #0B0B12;
+  --secondary: #0D1E3A;
+  background: var(--bg);
+  color: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 18% 10%, #2979FF08 0%, transparent 70%),
+    radial-gradient(circle at 82% 12%, rgba(130, 177, 255, 0.12), transparent 26rem),
+    linear-gradient(180deg, var(--bg) 0%, var(--surface) 42%, var(--bg) 100%);
+  color: #f5f7fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #2979FF99;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+}
+
+.section-kicker::before {
+  content: "<";
+  color: var(--accent-light);
+}
+
+.section-kicker::after {
+  content: "/>";
+  color: var(--accent-light);
+}
+
+.motion-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2979FF55;
+  background:
+    linear-gradient(135deg, rgba(41, 121, 255, 0.08), transparent 28%),
+    rgba(11, 11, 18, 0.78);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    background 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.motion-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(41, 121, 255, 0.24), transparent 13rem),
+    linear-gradient(135deg, rgba(130, 177, 255, 0.12), transparent 36%);
+  transition: opacity 260ms ease;
+}
+
+.motion-card:hover {
+  border-color: #2979FF55;
+  background: rgba(13, 30, 58, 0.72);
+  box-shadow: 0 0 24px #2979FF33;
+  transform: translateY(-8px) scale(1.015);
+}
+
+.motion-card:hover::before {
+  opacity: 1;
+}
+
+.hover-lift {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 20px #2979FF44;
+}
+
+.hover-lift::after {
+  content: "";
+  position: absolute;
+  inset: -40% -120%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: translateX(-65%) rotate(12deg);
+  transition: transform 520ms ease;
+}
+
+.hover-lift:hover::after {
+  transform: translateX(65%) rotate(12deg);
+}
+
+.hover-lift > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hover-icon {
+  transition: transform 220ms ease;
+}
+
+.group:hover .hover-icon,
+.hover-lift:hover .hover-icon {
+  transform: translate(3px, -3px) rotate(8deg);
+}
+
+.skill-pill {
+  cursor: default;
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    letter-spacing 220ms ease;
+}
+
+.skill-pill:hover {
+  color: var(--accent-light);
+  letter-spacing: 0.04em;
+  transform: translateY(-8px) rotate(-1deg) scale(1.08);
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.08;
+  background-image: linear-gradient(90deg, rgba(245, 247, 251, 0.38) 1px, transparent 1px),
+    linear-gradient(rgba(245, 247, 251, 0.24) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle, black, transparent 78%);
+}
+
+.tech-grid {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(41, 121, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41, 121, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(130, 177, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 177, 255, 0.035) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 61;
+  opacity: 0.1;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 5px,
+    rgba(41, 121, 255, 0.22) 6px
+  );
+}
+
+.tech-label {
+  font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  color: #82B1FF;
+}
+
+.terminal-dot {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 18px #2979FF99;
+}
+
+.circuit-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(41, 121, 255, 0.65), transparent);
+  opacity: 0.55;
+}
+
+.cursor-glow,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 70;
+  border-radius: 999px;
+  mix-blend-mode: screen;
+  translate: -50% -50%;
+}
+
+.cursor-glow {
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, #2979FF33 0%, #2979FF14 34%, transparent 68%);
+  opacity: 0.55;
+  transition: opacity 180ms ease, scale 180ms ease;
+}
+
+.cursor-ring {
+  width: 1.45rem;
+  height: 1.45rem;
+  border: 1px solid #2979FF;
+  background: #2979FF;
+  opacity: 0.7;
+  transition: width 180ms ease, height 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.cursor-glow.is-active {
+  opacity: 0.85;
+  scale: 1.25;
+}
+
+.cursor-ring.is-active {
+  width: 3rem;
+  height: 3rem;
+  border-color: #2979FF;
+  background: transparent;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, #E8E8F4 60%, #2979FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.blue-cta {
+  background: #2979FF;
+  color: #fff;
+}
+
+.blue-cta:hover {
+  background: #82B1FF;
+  box-shadow: 0 0 20px #2979FF44;
+}
+
+.blue-badge {
+  background: #0D1E3A;
+  border: 1px solid #2979FF55;
+  color: #82B1FF;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2979FF;
+  box-shadow: 0 0 0 3px #2979FF22;
+  outline: none;
+}
