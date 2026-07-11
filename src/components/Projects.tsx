@@ -36,42 +36,60 @@ export default function Projects() {
         </a>
       </div>
       <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {portfolio.projects.map((project, index) => (
-          <a
-            key={project.title}
-            href={project.href}
-            className="project-card motion-card group rounded-lg p-5"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <p className="tech-label flex items-center gap-2 text-sm font-black uppercase tracking-[0.14em]">
-                <GitBranch size={15} />
-                repo_0{index + 1} / {project.type}
-              </p>
-              <ArrowUpRight
-                className="hover-icon"
-                size={20}
-              />
-            </div>
-            <div className="mt-10 flex items-center gap-2 text-cyan/75">
-              <Braces size={18} />
-              <span className="tech-label text-xs uppercase tracking-[0.18em]">
-                module.loaded
-              </span>
-            </div>
-            <h3 className="mt-16 text-2xl font-black">{project.title}</h3>
-            <p className="mt-4 leading-7 text-ink/65">{project.description}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="blue-badge skill-pill rounded-md px-3 py-1 text-xs font-bold"
-                >
-                  {tech}
+        {portfolio.projects.map((project, index) => {
+          const hasLiveLink = Boolean(project.href) && project.href !== "#";
+
+          return (
+            <div
+              key={project.title}
+              className="project-card motion-card group flex flex-col rounded-lg p-5"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <p className="tech-label flex items-center gap-2 text-sm font-black uppercase tracking-[0.14em]">
+                  <GitBranch size={15} />
+                  repo_0{index + 1} / {project.type}
+                </p>
+                <ArrowUpRight className="hover-icon" size={20} />
+              </div>
+              <div className="mt-10 flex items-center gap-2 text-cyan/75">
+                <Braces size={18} />
+                <span className="tech-label text-xs uppercase tracking-[0.18em]">
+                  module.loaded
                 </span>
-              ))}
+              </div>
+              <h3 className="mt-16 text-2xl font-black">{project.title}</h3>
+              <p className="mt-4 leading-7 text-ink/65">{project.description}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="blue-badge skill-pill rounded-md px-3 py-1 text-xs font-bold"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 flex-1" />
+
+              {hasLiveLink ? (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="blue-cta hover-lift mt-6 inline-flex w-fit items-center gap-2 rounded-md px-4 py-2 text-sm font-bold"
+                >
+                  <span>View Project</span>
+                  <ArrowUpRight size={16} />
+                </a>
+              ) : (
+                <span className="mt-6 inline-flex w-fit cursor-not-allowed items-center gap-2 rounded-md border border-ink/15 px-4 py-2 text-sm font-bold text-ink/45">
+                  Coming Soon
+                </span>
+              )}
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
