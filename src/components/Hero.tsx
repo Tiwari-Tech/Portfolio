@@ -54,7 +54,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
           >
-            
+            <a
               href="#projects"
               className="blue-cta hover-lift inline-flex items-center gap-2 rounded-md px-5 py-3 font-bold shadow-glow"
             >
