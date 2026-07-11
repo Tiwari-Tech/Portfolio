@@ -58,7 +58,7 @@ export const portfolio = {
       description:
         "A project management web app with Kanban boards, task assignment, deadlines, priority tracking, JWT authentication, and role-based access control.",
       tech: ["React.js", "PostgreSQL", "Node.js", "Express.js", "REST APIs", "Figma"],
-      href: "#"
+      href: "https://pro-manage-web-app1-rho.vercel.app"
     },
     {
       title: "CareerPilot AI",
@@ -66,7 +66,7 @@ export const portfolio = {
       description:
         "An AI-powered interview preparation platform that analyzes a candidate's resume and target job description using Google Gemini AI to generate personalized roadmaps, technical and behavioral interview questions, and skill-gap analysis.",
       tech: ["React", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT"],
-      href: "https://github.com/Tiwari-Tech/CareerPilotAI"
+      href: "https://career-pilot-ai-flax.vercel.app"
     },
     {
       title: "CashFlow",
@@ -74,7 +74,7 @@ export const portfolio = {
       description:
         "A financial tracking platform for income, expenses, and cashflow with responsive dashboards, Gen AI budget insights, and intelligent spending analysis.",
       tech: ["React.js", "TypeScript", "Node.js", "MongoDB", "Gen AI", "Figma"],
-      href: "#"
+      href: "https://cashflow-blond-delta.vercel.app"
     },
     {
       title: "VAYUSUTRA",
@@ -83,21 +83,6 @@ export const portfolio = {
         "A cross-platform IoT air quality monitoring system with ESP32 sensors, Flask/ML backend, Flutter app, real-time AQI dashboards, and emergency alerts.",
       tech: ["Flutter", "Python", "Flask", "Scikit-learn", "SQLite", "Firebase", "ESP32"],
       href: "#"
-    }
-  ],
-  experience: [
-    {
-      role: "Full-Stack MERN Developer Intern",
-      company: "ProAzure Software Solution Pvt. Ltd",
-      location: "Pune, Maharashtra",
-      period: "July 2025 - Dec 2025",
-      points: [
-        "Engineered 3+ scalable MERN applications using MongoDB, Express.js, React.js, and Node.js.",
-        "Reduced average API response time by 30% through query optimization.",
-        "Architected secure REST APIs with JWT authentication and RBAC, cutting unauthorized access incidents to zero.",
-        "Integrated Generative AI features using LLM APIs and prompt engineering.",
-        "Collaborated in a 5-member agile team using Git workflows, pull requests, and code reviews while maintaining a zero critical-bug production record."
-      ]
     }
   ],
   education: [
