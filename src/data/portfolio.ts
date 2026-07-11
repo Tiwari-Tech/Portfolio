@@ -14,8 +14,8 @@ export const portfolio = {
     { value: "30%", label: "API response improvement" }
   ],
   socials: [
-    { label: "GitHub", href: "https://github.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
+    { label: "GitHub", href: "https://github.com/Tiwari-Tech" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/someshmani-tiwari-dev" },
     { label: "Email", href: "mailto:work.somesh23@gmail.com" }
   ],
   skills: [
