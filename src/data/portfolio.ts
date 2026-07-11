@@ -85,6 +85,21 @@ export const portfolio = {
       href: "#"
     }
   ],
+  experience: [
+    {
+      role: "Full-Stack MERN Developer Intern",
+      company: "ProAzure Software Solution Pvt. Ltd",
+      location: "Pune, Maharashtra",
+      period: "July 2025 - Dec 2025",
+      points: [
+        "Engineered 3+ scalable MERN applications using MongoDB, Express.js, React.js, and Node.js.",
+        "Reduced average API response time by 30% through query optimization.",
+        "Architected secure REST APIs with JWT authentication and RBAC, cutting unauthorized access incidents to zero.",
+        "Integrated Generative AI features using LLM APIs and prompt engineering.",
+        "Collaborated in a 5-member agile team using Git workflows, pull requests, and code reviews while maintaining a zero critical-bug production record."
+      ]
+    }
+  ],
   education: [
     {
       degree: "B.Tech in Information Technology",
