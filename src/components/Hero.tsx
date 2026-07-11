@@ -2,7 +2,7 @@
 
 import { portfolio } from "@/data/portfolio";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Cpu, Download, Terminal } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Cpu, Terminal } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -54,17 +54,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
           >
-            <a
+            
               href="#projects"
               className="blue-cta hover-lift inline-flex items-center gap-2 rounded-md px-5 py-3 font-bold shadow-glow"
             >
               <span>View Work</span> <ArrowUpRight className="hover-icon" size={18} />
-            </a>
-            <a
-              href="/Resume_Somesh.pdf"
-              className="blue-cta hover-lift inline-flex items-center gap-2 rounded-md px-5 py-3 font-bold"
-            >
-              <span>Resume</span> <Download className="hover-icon" size={18} />
             </a>
           </motion.div>
         </div>
