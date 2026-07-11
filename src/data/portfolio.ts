@@ -61,6 +61,14 @@ export const portfolio = {
       href: "#"
     },
     {
+      title: "CareerPilot AI",
+      type: "MERN + Gen AI",
+      description:
+        "An AI-powered interview preparation platform that analyzes a candidate's resume and target job description using Google Gemini AI to generate personalized roadmaps, technical and behavioral interview questions, and skill-gap analysis.",
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT"],
+      href: "https://github.com/Tiwari-Tech/CareerPilotAI"
+    },
+    {
       title: "CashFlow",
       type: "AI Finance Platform",
       description:
